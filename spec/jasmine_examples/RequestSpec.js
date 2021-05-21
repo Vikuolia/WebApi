@@ -8,21 +8,21 @@ let TeamCityReporter = new reporters.TeamCityReporter ({
     consolidateAll: false
 });
 
-const token = "VXyHRw8-8ZEAAAAAAAAAAcISVMxdQzKaiUtmWNqwNJzqzFGBNKIibj2CAUNZhcie";
+const token = "k22xIkOEk4UAAAAAAAAAAQGnV7_UHGw6QPS6c49018sc7SeM3fSdgjytRrq0HVff";
 jasmine.getEnv().addReporter(TeamCityReporter)
 
-describe("upload test.txt to server", function() {
+describe("upload text.sorry.txt to server", function() {
   let axios = require('axios');
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
   let config = {
       method: 'post',
       url: 'https://content.dropboxapi.com/2/files/upload',
       headers: { 
-       'Dropbox-API-Arg': '{"mode":"add","autorename":true,"mute":false,"path":"/test.txt"}',
+       'Dropbox-API-Arg': '{"mode":"add","autorename":true,"mute":false,"path":"/text.sorry.txt"}',
        'Content-Type': 'application/octet-stream'
      },
       data : {
-       binary: "/Users/i5-8600K/api_js_axios/test.txt"
+       binary: "/Users/i5-8600K/api_js_axios/text.sorry.txt"
      }
     };
 
@@ -57,7 +57,7 @@ describe("get metadata from request", function(){
          'Authorization': `Bearer ${token}`
        },
        data : {
-        "path":"/test.txt"
+        "path":"/text.sorry.txt"
        }
     };
 
@@ -103,7 +103,7 @@ describe("delete from server", function(){
     'Content-Type': 'application/json'
     },
     data : {
-        "path":"/test.txt"
+        "path":"/text.sorry.txt"
     }
 };
 
